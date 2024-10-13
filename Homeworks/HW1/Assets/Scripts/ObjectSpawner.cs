@@ -11,7 +11,7 @@ public class ObjectSpawner : MonoBehaviour
     void Update()
     {
        
-        if (Input.GetKeyDown(KeyCode.W)) 
+        if (Input.GetKeyDown(KeyCode.E)) 
         {
             SpawnObject();
         }
