@@ -7,7 +7,7 @@ public class CollisionBehavior : MonoBehaviour
 
     private Rigidbody rb;
 
-    public float forceAmount = 100f;
+    public float forceAmount = 10f;
 
     
     void Start()
@@ -19,6 +19,6 @@ public class CollisionBehavior : MonoBehaviour
     void Update()
     {
       
-        rb.AddForce(Vector3.up * forceAmount);
+        rb.AddForce(Vector3.left * forceAmount);
     }
 }
