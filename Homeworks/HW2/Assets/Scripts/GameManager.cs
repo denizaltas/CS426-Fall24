@@ -1,35 +1,106 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("UI Elements")]
+    [Header("UI Screens")]
+    public GameObject startScreen; // Start Game UI
+    public GameObject deathScreen; // Death Screen UI
+    public GameObject gameCompleteScreen; // Game Complete UI
+
+    [Header("UI Text Elements")]
     public TextMeshProUGUI instructionText; // WASD instructions
-    public TextMeshProUGUI interactionText; // Door interaction prompts
-    public TextMeshProUGUI completionText;  // Level completion message
 
     [Header("Player Reference")]
-    public Transform player; // Reference to the player object
+    public Transform player;
+    private Vector3 playerStartPosition; // Player restart point
+
+    private bool gameStarted = false; // Track if the game has started
 
     void Start()
     {
-        // Show WASD instructions at the start
-        if (instructionText != null)
+        if (player != null)
         {
-            instructionText.text = "Use W, A, S, D to move.";
-            instructionText.gameObject.SetActive(true);
-            StartCoroutine(FadeOutText(instructionText, 5f)); // Fade out after 5 seconds
+            playerStartPosition = player.position;
         }
 
-        if (interactionText != null)
-            interactionText.gameObject.SetActive(false); // Hide interaction prompts initially
-
-        if (completionText != null)
-            completionText.gameObject.SetActive(false); // Hide completion message initially
+        ShowStartScreen();
     }
 
-    // Smoothly fades out text over time
+    void Update()
+    {
+        // Allow starting the game with Spacebar
+        if (!gameStarted && Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("Spacebar Pressed - Starting Game");
+            StartGame();
+        }
+    }
+
+    void ShowStartScreen()
+    {
+        if (startScreen != null)
+            startScreen.SetActive(true);
+
+        if (deathScreen != null)
+            deathScreen.SetActive(false);
+
+        if (gameCompleteScreen != null)
+            gameCompleteScreen.SetActive(false);
+
+        if (instructionText != null)
+            instructionText.gameObject.SetActive(false);
+
+        Time.timeScale = 0f; // Pause the game until start is clicked
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void StartGame()
+    {
+        if (gameStarted) return; // Prevent multiple triggers
+
+        Debug.Log("StartGame Method Called!");
+
+        // Hide Start Screen
+        if (startScreen != null)
+        {
+            startScreen.SetActive(false);
+            Debug.Log("Start Screen Deactivated");
+        }
+
+        // Show WASD instructions
+        if (instructionText != null)
+        {
+            instructionText.gameObject.SetActive(true);
+            instructionText.text = "Use W, A, S, D to move.";
+            StartCoroutine(FadeOutText(instructionText, 5f)); // Fades out after 5 seconds
+        }
+
+        Time.timeScale = 1f; // Resume the game
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        gameStarted = true; // Mark the game as started
+        Debug.Log("Game Started Successfully!");
+    }
+
+    public void ShowLevelComplete()
+    {
+        if (gameCompleteScreen != null)
+        {
+            gameCompleteScreen.SetActive(true); // Show the Game Complete screen
+            Debug.Log("Game Complete Screen Activated");
+        }
+
+        Time.timeScale = 0f; // Pause the game
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+
     IEnumerator FadeOutText(TextMeshProUGUI text, float fadeDuration)
     {
         float elapsedTime = 0f;
@@ -43,16 +114,5 @@ public class GameManager : MonoBehaviour
         }
 
         text.gameObject.SetActive(false);
-    }
-
-    // Handle level completion UI
-    public void ShowLevelComplete()
-    {
-        if (completionText != null)
-        {
-            completionText.text = "Level Completed!";
-            completionText.gameObject.SetActive(true);
-            StartCoroutine(FadeOutText(completionText, 5f)); // Fades out after 5 seconds
-        }
     }
 }
