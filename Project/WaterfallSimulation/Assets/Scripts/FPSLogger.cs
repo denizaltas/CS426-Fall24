@@ -20,7 +20,7 @@ public class FPSLogger : MonoBehaviour
         {
             using (StreamWriter writer = new StreamWriter(filePath, false))
             {
-                writer.WriteLine("Run,Average FPS,Median FPS");
+                writer.WriteLine("Run,Average FPS");
             }
         }
     }
@@ -42,13 +42,10 @@ public class FPSLogger : MonoBehaviour
     private void WriteResultsToFile()
     {
         float averageFPS = CalculateAverage(fpsValues);
-        float medianFPS = CalculateMedian(fpsValues);
-
         using (StreamWriter writer = new StreamWriter(filePath, true))
         {
-            writer.WriteLine($"{System.DateTime.Now}, {averageFPS:F2}, {medianFPS:F2}");
+            writer.WriteLine($"{System.DateTime.Now}, {averageFPS:F2}");
         }
-
         Debug.Log($"FPS results written to {filePath}");
     }
 
@@ -62,18 +59,6 @@ public class FPSLogger : MonoBehaviour
         return sum / values.Count;
     }
 
-    private float CalculateMedian(List<float> values)
-    {
-        values.Sort();
-        int count = values.Count;
-        if (count % 2 == 0)
-        {
-            return (values[count / 2 - 1] + values[count / 2]) / 2.0f;
-        }
-        else
-        {
-            return values[count / 2];
-        }
-    }
 }
+
 
