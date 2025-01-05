@@ -343,12 +343,16 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/GameOverUI.cs"
 "Assets/Scripts/CameraSwitcher.cs"
 "Assets/Scripts/DoorUnlock.cs"
 "Assets/Scripts/GameCompleteUI.cs"
 "Assets/Scripts/GameStartUI.cs"
 "Assets/Scripts/KeyPickup.cs"
+"Assets/Scripts/PlayerDeathManager.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/TrapTrigger.cs"
+"Assets/Scripts/TrapVisuals.cs"
 -langversion:9.0
 
 /deterministic

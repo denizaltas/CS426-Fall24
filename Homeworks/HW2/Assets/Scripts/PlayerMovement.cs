@@ -20,11 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Ensure Rigidbody is present
         rb = GetComponent<Rigidbody>();
-        if (rb == null)
-        {
-            Debug.LogError("Rigidbody component missing from Player GameObject!");
-        }
-
+        
         rb.freezeRotation = true; // Prevent unwanted rotation from physics
     }
 
