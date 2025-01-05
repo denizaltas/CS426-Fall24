@@ -344,6 +344,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/GameOverUI.cs"
+"Assets/Polytope Studio/Lowpoly_Characters/Sources/Scripts/PT_Create_Prefab.cs"
 "Assets/Scripts/CameraSwitcher.cs"
 "Assets/Scripts/DoorUnlock.cs"
 "Assets/Scripts/GameCompleteUI.cs"
