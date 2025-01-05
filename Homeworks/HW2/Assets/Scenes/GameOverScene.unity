@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 509108887}
   - component: {fileID: 509108886}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RetryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 73ca2a7993b7e944ba4e5e5209688c77, type: 3}
+      - m_Target: {fileID: 11500000, guid: 749a583fc80521b448c6f1ebe3e898e1, type: 3}
         m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
         m_MethodName: 
         m_Mode: 1
@@ -429,7 +429,7 @@ RectTransform:
   m_Children:
   - {fileID: 308706302}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -869,7 +869,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1774310947
 GameObject:
@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 1838879785}
   - component: {fileID: 1838879784}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 73ca2a7993b7e944ba4e5e5209688c77, type: 3}
+      - m_Target: {fileID: 11500000, guid: 749a583fc80521b448c6f1ebe3e898e1, type: 3}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1

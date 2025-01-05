@@ -24,7 +24,6 @@ public class CameraSwitcher : MonoBehaviour
             FPSCamera.enabled = !isOverheadView;
             overheadCamera.enabled = isOverheadView;
 
-            Debug.Log(isOverheadView ? "Switched to Overhead Camera" : "Switched to Player Camera");
         }
     }
 }

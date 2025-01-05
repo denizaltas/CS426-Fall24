@@ -4,22 +4,30 @@ using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour
 {
+    [Header("Buttons")]
     public Button retryButton;
     public Button mainMenuButton;
 
     void Start()
     {
-        retryButton.onClick.AddListener(RetryGame);
-        mainMenuButton.onClick.AddListener(ReturnToMainMenu);
+        Time.timeScale = 1f;
+
+        if (retryButton != null)
+            retryButton.onClick.AddListener(RetryGame);
+        
+        if (mainMenuButton != null)
+            mainMenuButton.onClick.AddListener(ReturnToMainMenu);
     }
 
-    void RetryGame()
+    public void RetryGame()
     {
-        SceneManager.LoadScene("GameScene"); 
+        Debug.Log("Retrying Game...");
+        SceneManager.LoadScene("GameScene");
     }
 
-    void ReturnToMainMenu()
+    public void ReturnToMainMenu()
     {
-        SceneManager.LoadScene("StartScene"); 
+        Debug.Log("Returning to Main Menu...");
+        SceneManager.LoadScene("StartScene");
     }
 }

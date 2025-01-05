@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerDeathManager : MonoBehaviour
 {
@@ -11,13 +12,6 @@ public class PlayerDeathManager : MonoBehaviour
 
         isDead = true;
 
-        // Disable Player Movement
-        PlayerMovement controller = GetComponent<PlayerMovement>();
-        if (controller != null)
-        {
-            controller.enabled = false;
-        }
-
         // Disable Collider to prevent further triggers
         Collider collider = GetComponent<Collider>();
         if (collider != null)
@@ -25,12 +19,15 @@ public class PlayerDeathManager : MonoBehaviour
             collider.enabled = false;
         }
 
-        Invoke(nameof(LoadGameOverScene), 1.5f);
+        StartCoroutine(LoadGameOverScene());
     }
 
-    void LoadGameOverScene()
+    IEnumerator LoadGameOverScene()
     {
-        SceneManager.LoadScene("GameOverScene");
+        Time.timeScale = 1f; // Ensure time is running normally
+        yield return new WaitForSecondsRealtime(0f);
+
+        SceneManager.LoadScene("GameOverScene", LoadSceneMode.Single);
     }
 
     void OnTriggerEnter(Collider other)
@@ -50,6 +47,11 @@ public class PlayerDeathManager : MonoBehaviour
             Die("Caught by a trap");
         }
 
+        // Death by Guard
+        if (other.CompareTag("Guard"))
+        {
+            Die("Caught by a guard");
+        }
     }
 
     void Update()

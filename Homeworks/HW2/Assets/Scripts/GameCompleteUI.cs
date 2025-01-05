@@ -10,6 +10,7 @@ public class GameCompleteUI : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         mainMenuButton.onClick.AddListener(ReturnToMainMenu);
         quitButton.onClick.AddListener(QuitGame);
     }

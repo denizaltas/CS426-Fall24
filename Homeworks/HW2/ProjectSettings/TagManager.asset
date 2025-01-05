@@ -8,6 +8,7 @@ TagManager:
   - Key
   - Trap
   - DeathZone
+  - Guard
   layers:
   - Default
   - TransparentFX

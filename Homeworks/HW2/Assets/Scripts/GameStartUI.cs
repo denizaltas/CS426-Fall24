@@ -15,6 +15,7 @@ public class GameStartUI : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         // Attach listeners to buttons
         startButton.onClick.AddListener(StartGame);
         instructionsButton.onClick.AddListener(ShowInstructions);
