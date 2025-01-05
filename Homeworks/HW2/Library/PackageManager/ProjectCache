@@ -119,6 +119,7 @@ m_ResolvedPackages:
     - 2.4.4
     - 2.5.1
     - 2.5.2
+    - 2.6.0
     compatible:
     - 2.2.0
     - 2.3.1
@@ -126,6 +127,7 @@ m_ResolvedPackages:
     - 2.4.4
     - 2.5.1
     - 2.5.2
+    - 2.6.0
     verified: 2.2.0
   dependencies: []
   resolvedDependencies: []
@@ -319,11 +321,13 @@ m_ResolvedPackages:
     - 3.0.27
     - 3.0.28
     - 3.0.31
+    - 3.0.34
     compatible:
     - 3.0.27
     - 3.0.28
     - 3.0.31
-    verified: 3.0.31
+    - 3.0.34
+    verified: 3.0.34
   dependencies:
   - name: com.unity.ext.nunit
     version: 1.0.6
@@ -766,6 +770,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.8
     - 3.2.0-pre.9
     - 3.2.0-pre.10
+    - 3.2.0-pre.11
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -783,6 +788,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.8
     - 3.2.0-pre.9
     - 3.2.0-pre.10
+    - 3.2.0-pre.11
     verified: 3.0.9
   dependencies:
   - name: com.unity.ugui
@@ -1108,17 +1114,18 @@ m_ResolvedPackages:
     - 1.7.6
     - 1.7.7
     - 1.7.8
-    - 1.8.0-pre.1
     - 1.8.0
     - 1.9.0
     - 1.9.1
     - 1.9.2
     - 1.9.4
+    - 1.9.5
     compatible:
     - 1.9.1
     - 1.9.2
     - 1.9.4
-    verified: 1.9.4
+    - 1.9.5
+    verified: 1.9.5
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -3126,9 +3133,11 @@ m_ResolvedPackages:
     - 1.1.0
     - 1.1.1
     - 1.2.2
+    - 1.2.3
     compatible:
     - 1.2.2
-    verified: 1.2.2
+    - 1.2.3
+    verified: 1.2.3
   dependencies: []
   resolvedDependencies: []
   keywords: []
